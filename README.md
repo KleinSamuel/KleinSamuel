@@ -1,16 +1,31 @@
-### Hi there 👋
+# Hi 👋
 
-<!--
-**KleinSamuel/KleinSamuel** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+```go
+package githubrepo
 
-Here are some ideas to get you started:
+import "fmt"
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+func main() {
+	var me = Bioinformatician{
+		name:                 "Samuel Klein",
+		role:                 "PhD student",
+		institution:          "LMU Munich",
+		humanLanguages:       []string{"german", "english"},
+		programmingLanguages: []string{"java", "python", "javascript", "go", "bash"},
+	}
+	me.sayHi()
+}
+
+type Bioinformatician struct {
+	name                 string
+	role                 string
+	institution          string
+	humanLanguages       []string
+	programmingLanguages []string
+}
+
+func (b Bioinformatician) sayHi() string {
+	return fmt.Sprintf("Thanks for dropping by, hope you find some of my work interesting!" +
+		"\n\ngreetings\n%s", b.name)
+}
+```
